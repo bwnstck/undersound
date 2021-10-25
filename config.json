@@ -1,0 +1,24 @@
+{
+  "base_url": "https://luis-schwamm.weinstock.it",
+  "site_title": "👋 Luis Schwamm 👨‍🎤",
+  "site_description": "1 schöne Seite über Luis",
+  "site_keywords": [
+    {
+      "keyword": "Next.js"
+    },
+    {
+      "keyword": "Netlify"
+    },
+    {
+      "keyword": "React"
+    },
+    {
+      "keyword": "Musik"
+    },
+    {
+      "keyword": "Gute Laune"
+    }
+  ],
+  "posts_per_page": 5,
+  "github_account": "bwnstck"
+}
