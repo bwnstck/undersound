@@ -1,7 +1,7 @@
 {
-  "base_url": "https://luis-schwamm.weinstock.it",
-  "site_title": "👋 Luis Schwamm 👨‍🎤",
-  "site_description": "1 schöne Seite über Luis",
+  "base_url": "https://undersound.koeln",
+  "site_title": "👋 underSound Festival🎤",
+  "site_description": "",
   "site_keywords": [
     {
       "keyword": "Next.js"
@@ -20,5 +20,5 @@
     }
   ],
   "posts_per_page": 5,
-  "github_account": "bwnstck"
+  "github_account": ""
 }

@@ -1,14 +1,14 @@
 import React from 'react'
 
-import config from '$lib/config'
+// import config from '$lib/config'
 
-import GitHub from '$assets/github-alt.svg'
-import Twitter from '$assets/twitter-alt.svg'
+// import GitHub from '$assets/github-alt.svg'
+// import Twitter from '$assets/twitter-alt.svg'
 
 export const SocialList = () => {
   return (
     <div>
-      <a
+      {/* <a
         title="Twitter"
         href={`https://twitter.com/${config.twitter_account}`}
         target="_blank"
@@ -23,7 +23,7 @@ export const SocialList = () => {
         rel="noopener noreferrer"
       >
         <GitHub width={24} height={24} fill={'#222'} />
-      </a>
+      </a> */}
     </div>
   )
 }

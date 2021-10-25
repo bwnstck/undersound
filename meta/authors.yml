@@ -1,8 +1,9 @@
 authors:
-  - slug: luis
-    name: Luis Tadamm!
+  - slug: admin
+    name: Admin
+    introduction: |-
+
+  - slug: fiona
+    name: Fiona Göbel
     introduction: |-
       Hallo, ich bins!
-
-
-      Euer Lieblingsmusiker 👋

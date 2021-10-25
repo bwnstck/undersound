@@ -2,37 +2,19 @@ import Image from 'next/image'
 
 import ImageContainer from '$components/ImageContainer'
 
-import { getData } from '$lib/data'
-
 import styled from 'styled-components'
 
-import profilePicture from '$images/Profilbild.png'
-import authors from '$meta/authors.yml'
-import { AuthorContent } from '$types/data'
-
+// import { getData } from '$lib/data'
+// import authors from '$meta/authors.yml'
+// import { AuthorContent } from '$types/data'
 const LandingPage = () => {
-  const author = getData({ data: authors, slug: 'luis' }) as AuthorContent
-
-  const iFrameSrc =
-    'https://bandcamp.com/EmbeddedPlayer/album=1522687561/size=large/bgcol=ffffff/linkcol=f171a2/tracklist=false/artwork=small/transparent=true/'
+  // const author = getData({ data: authors, slug: 'luis' }) as AuthorContent
 
   return (
-    <PageWrapper backgroundUrl={'/images/landing.jpg'}>
-      <Title>{author.name}</Title>
+    <PageWrapper backgroundUrl={'/images/background.png'}>
       <ImageWrapper>
-        <Image src={profilePicture} alt="Das ist Luis" />
+        <Image src={'/images/logo.svg'} alt="Logo" width={300} height={150} />
       </ImageWrapper>
-
-      {author?.introduction && <Paragraph>{author.introduction}</Paragraph>}
-
-      <Player>
-        <iframe src={iFrameSrc} seamless>
-          <a href="https://luisschwamm.bandcamp.com/album/m-ngel">
-            Mängel by Luis Schwamm
-          </a>
-        </iframe>
-      </Player>
-      {/* <SocialList /> */}
     </PageWrapper>
   )
 }
@@ -45,34 +27,23 @@ const PageWrapper = styled(ImageContainer)`
   justify-content: space-around;
 `
 
-const Title = styled.h1`
-  text-align: center;
-  padding: 0;
-`
+// const Title = styled.h1`
+//   text-align: center;
+//   padding: 0;
+// `
 const ImageWrapper = styled.div`
   width: 90%;
   text-align: center;
   margin: 0 auto;
 
   > div {
+    transition: all 300ms;
     :hover {
-      transform: scale(1.1);
+      transform: scale(0.9) translateY(40px);
     }
   }
 `
 
-const Player = styled.div`
-  width: 90%;
-  max-width: 500px;
-  margin: 0 auto;
-
-  > iframe {
-    border: 0;
-    width: 100%;
-    height: 120px;
-  }
-`
-
-const Paragraph = styled.p`
-  text-align: center;
-`
+// const Paragraph = styled.p`
+//   text-align: center;
+// `

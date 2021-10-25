@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
 
-import Navigation from './Navigation'
-
 import styled from 'styled-components'
 
 type Props = {
@@ -19,16 +17,13 @@ export default function Layout({ children }: Props) {
           <link rel="apple-touch-icon" href="/icon.png" />
           <meta name="theme-color" content="#fff" />
         </Head>
-        <nav>
-          <Navigation />
-        </nav>
         <Wrapper>{children}</Wrapper>
       </div>
       <Script
         async
         src="https://performance.weinstock.it/tracker.js"
         data-ackee-server="https://performance.weinstock.it"
-        data-ackee-domain-id="cbaeda87-4da7-4211-a0f4-5cca82de0e04"
+        data-ackee-domain-id="a4d4839b-3c03-4974-a22b-1e4ada2963f1"
       />
     </>
   )
