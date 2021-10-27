@@ -4,26 +4,31 @@ const GlobalStyle = createGlobalStyle`
 
 /* VARIABLES */
 
-  :root {
-    --color-text: #f9f7f4;
-    --color-background: #ADC7C6;
+:root {
+    --color-black: #001B2C;
+    --color-white: #ffffff;
+    --color-text: var(----color-black);
+    --color-background: var(--color-black);
+    --color-cta: #FFC14A;
     --primary-color: #f171a2;
     --secondary-color: #FCAF45;
     --background-color: grey;
+
+    --fontSize-small: 0.625rem
   }
 
 /* FONTS */
   /* Regular */
-@font-face {
+/* @font-face {
   font-family: 'Montserrat';
   src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
   font-style:normal ;
   font-weight: 400;
   font-display: swap;
-}
+} */
 
 /* Medium */
-@font-face {
+/* @font-face {
   font-family: 'Montserrat';
   src: url("/fonts/Montserrat/Montserrat-Medium.ttf");
   font-style:normal ;
@@ -36,10 +41,10 @@ const GlobalStyle = createGlobalStyle`
   font-style:italic ;
   font-weight: 500;
   font-display: swap;
-}
+} */
 
 /* Bold */
-  @font-face {
+  /* @font-face {
     font-family: 'Montserrat';
     src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
     font-style:normal ;
@@ -52,7 +57,7 @@ const GlobalStyle = createGlobalStyle`
     font-style:italic ;
     font-weight: 700;
     font-display: swap;
-  }
+  } */
 
 /* STYLE RESET */
 
@@ -72,7 +77,10 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'urbane', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
     color: #222;
     
     height: 100%;
@@ -94,7 +102,7 @@ const GlobalStyle = createGlobalStyle`
 
     h1,h2,h3,h4,h5,h6{
       color: var(--primary-color);
-      margin: 1rem auto .5rem;
+      margin: 1rem 0 .5rem;
       font-weight: 500;
     }
     

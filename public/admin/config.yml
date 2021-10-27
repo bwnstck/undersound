@@ -63,6 +63,7 @@ collections:
                 hint: 'First and Last'
               - label: 'Introduction'
                 name: 'introduction'
+                required: false
                 widget: 'text'
               - label: 'Profilbild'
                 name: 'profilePic'

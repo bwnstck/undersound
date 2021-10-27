@@ -4,6 +4,7 @@ module.exports = {
       defaultPathMap,
     }
   },
+  target: 'serverless',
   pageExtensions: ['tsx'],
   i18n: {
     locales: ['de'],
@@ -21,6 +22,10 @@ module.exports = {
         {
           test: /\.svg$/,
           use: '@svgr/webpack',
+        },
+        {
+          test: /\.md$/,
+          use: 'raw-loader',
         },
       ]
     )
