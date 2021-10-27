@@ -17,48 +17,6 @@ const GlobalStyle = createGlobalStyle`
     --fontSize-small: 0.625rem
   }
 
-/* FONTS */
-  /* Regular */
-/* @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
-  font-style:normal ;
-  font-weight: 400;
-  font-display: swap;
-} */
-
-/* Medium */
-/* @font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/Montserrat/Montserrat-Medium.ttf");
-  font-style:normal ;
-  font-weight: 500;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Montserrat';
-  src: url("/fonts/Montserrat/Montserrat-MediumItalic.ttf");
-  font-style:italic ;
-  font-weight: 500;
-  font-display: swap;
-} */
-
-/* Bold */
-  /* @font-face {
-    font-family: 'Montserrat';
-    src: url("/fonts/Montserrat/Montserrat-Bold.ttf");
-    font-style:normal ;
-    font-weight: 700;
-    font-display: swap;
-  }
-  @font-face {
-    font-family: 'Montserrat';
-    src: url("/fonts/Montserrat/Montserrat-BoldItalic.ttf");
-    font-style:italic ;
-    font-weight: 700;
-    font-display: swap;
-  } */
-
 /* STYLE RESET */
 
   * {
