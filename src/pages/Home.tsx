@@ -1,12 +1,13 @@
 import { useRef, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
+import { Fade } from 'react-slideshow-image'
 
 import Image from 'next/image'
 
 import Footer from '$components/Footer'
-import ImageContainer from '$components/ImageContainer'
 
 import styled from 'styled-components'
+import 'react-slideshow-image/dist/styles.css'
 
 import HomeContent from '$meta/home.yml'
 
@@ -27,11 +28,28 @@ const LandingPage = () => {
 
   return (
     <>
-      <LandingBackground backgroundUrl={'images/background.png'}>
-        <TitleWrapper>
-          <Image src={'/images/logo.svg'} alt="Logo" width={620} height={322} />
-        </TitleWrapper>
-      </LandingBackground>
+      <TitleWrapper>
+        <Image src={'/images/logo.svg'} alt="Logo" width={363} height={189} />
+      </TitleWrapper>
+      <SlideContainer className="slide-container">
+        <Fade
+          duration={5000}
+          transitionDuration={1000}
+          arrows={false}
+          cssClass={'Fader'}
+        >
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
+            <div className="each-fade" key={slideNr}>
+              <Image
+                src={`/images/slides/slide_${slideNr}.png`}
+                alt="slide"
+                height={740}
+                width={1440}
+              />
+            </div>
+          ))}
+        </Fade>
+      </SlideContainer>
       <ContentWrapper>
         <Body>{HomeContent.body}</Body>
       </ContentWrapper>
@@ -39,7 +57,7 @@ const LandingPage = () => {
         <iframe
           src={HomeContent.surveyUrl}
           width={'100%'}
-          height={1700}
+          height={1500}
           frameBorder={0}
           marginHeight={0}
           marginWidth={0}
@@ -120,11 +138,20 @@ const LandingPage = () => {
 
 export default LandingPage
 
-const LandingBackground = styled(ImageContainer)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+const SlideContainer = styled.div`
+  .Fader {
+    height: 51vw;
+    div {
+      width: 100vw;
+    }
+    img {
+      width: 100%;
+      background-position: center !important;
+      background-size: cover !important;
+    }
+  }
 `
+
 interface ImpressProps {
   visible: boolean
 }
@@ -134,11 +161,19 @@ const ImpressWrapper = styled.div<ImpressProps>`
   padding: 1rem 2rem;
 `
 const TitleWrapper = styled.div`
+  position: absolute;
   display: flex;
-  align-items: center;
   justify-content: center;
-  > div {
-    width: 500px;
+  top: calc(25vw - 95px);
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  padding: 1rem;
+
+  img {
+    max-width: 660px !important;
+    width: 62vw;
   }
 `
 const TitleAndClose = styled.div`
@@ -155,6 +190,8 @@ const TitleAndClose = styled.div`
 const Body = styled(ReactMarkdown)`
   text-align: left;
   font-size: 40px;
+  max-width: 600px;
+  margin: auto;
   > p {
     line-height: 40px;
     padding-bottom: 1rem;
