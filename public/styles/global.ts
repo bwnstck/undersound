@@ -53,7 +53,7 @@ const GlobalStyle = createGlobalStyle`
 
     a:active,
     a:hover {
-      color: #000;
+      color: var(--primary-color);
     }
 
     /* Headings */

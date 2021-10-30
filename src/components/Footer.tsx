@@ -2,17 +2,25 @@ import React from 'react'
 
 import Image from 'next/image'
 
+import { MetaState } from '$pages/Home'
+
 import styled from 'styled-components'
 
-function Footer({ onSetImpress }: { onSetImpress: () => void }) {
+import FooterContent from '$meta/footerContent.yml'
+function Footer({ onSetImpress }: { onSetImpress: (type: MetaState) => void }) {
   return (
     <FooterWrapper>
       <Image src={'/images/logo.svg'} alt="Logo" width={318} height={166} />
       <p>
-        Fiona Göbel & Johanna Breuckmann © {new Date().getFullYear()}
-        <button onClick={onSetImpress}>Impressum</button>
-        <button onClick={onSetImpress}>Datenschutz</button>
+        {FooterContent.footerMeta} © {new Date().getFullYear()}
+        <button onClick={() => onSetImpress('impress')}>Impressum</button>
+        <button onClick={() => onSetImpress('dataSecurity')}>
+          Datenschutz
+        </button>
       </p>
+      <Credits>
+        made with ❤️ by <a href="https://weinstock.it">bwnstck</a>
+      </Credits>
     </FooterWrapper>
   )
 }
@@ -40,8 +48,17 @@ const FooterWrapper = styled.div`
       border: 0;
       background-color: transparent;
     }
+    button:active,
+    button:hover {
+      color: var(--primary-color);
+    }
     button:first-child {
       padding: 0 0.75rem;
     }
   }
+`
+
+const Credits = styled.span`
+  color: var(--color-white);
+  font-size: var(--fontSize-small);
 `
