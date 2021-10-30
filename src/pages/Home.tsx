@@ -23,44 +23,48 @@ const LandingPage = () => {
   const handleShowMeta = (type: MetaState) => {
     if (type === 'impress') {
       setShowImpress('impress')
+      setTimeout(() => {
+        impressRef.current?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
     }
     if (type === 'dataSecurity') {
       setShowImpress('dataSecurity')
+      setTimeout(() => {
+        dataSecurityRef.current?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
     }
     if (type === 'notShown') {
       setShowImpress('notShown')
     }
-    if (showImpress !== 'notShown') {
-      setTimeout(() => {
-        impressRef.current?.scrollIntoView({ behavior: 'smooth' })
-        dataSecurityRef.current?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
-    }
   }
+
   return (
     <>
-      <TitleWrapper>
-        <Image src={'/images/logo.svg'} alt="Logo" width={363} height={189} />
-      </TitleWrapper>
-      <SlideContainer className="slide-container">
-        <Fade
-          duration={5000}
-          transitionDuration={1000}
-          arrows={false}
-          cssClass={'Fader'}
-        >
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
-            <div className="each-fade" key={slideNr}>
-              <Image
-                src={`/images/slides/slide_${slideNr}.png`}
-                alt="slide"
-                height={740}
-                width={1440}
-              />
-            </div>
-          ))}
-        </Fade>
-      </SlideContainer>
+      <LandingWrapper>
+        <TitleWrapper>
+          <Image src={'/images/logo.svg'} alt="Logo" width={363} height={189} />
+        </TitleWrapper>
+        {/* <Dimmer /> */}
+        <SlideContainer className="slide-container">
+          <Fade
+            duration={3000}
+            transitionDuration={2000}
+            arrows={false}
+            cssClass={'Fader'}
+          >
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
+              <div className="each-fade" key={slideNr}>
+                <Image
+                  src={`/images/slides/slide_${slideNr}.png`}
+                  alt="slide"
+                  height={740}
+                  width={1440}
+                />
+              </div>
+            ))}
+          </Fade>
+        </SlideContainer>
+      </LandingWrapper>
       <ContentWrapper>
         <Body>{HomeContent.body}</Body>
       </ContentWrapper>
@@ -100,6 +104,18 @@ const LandingPage = () => {
 
 export default LandingPage
 
+const LandingWrapper = styled.div`
+  position: relative;
+`
+// const Dimmer = styled.div`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   z-index: 90;
+//   height: 100%;
+//   width: 100%;
+//   background-color: rgba(53, 21, 21, 0.5);
+// `
 const SlideContainer = styled.div`
   .Fader {
     height: 51vw;
@@ -135,6 +151,8 @@ const TitleWrapper = styled.div`
   z-index: 100;
 
   padding: 1rem;
+
+  filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 
   img {
     max-width: 660px !important;

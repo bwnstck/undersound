@@ -31,7 +31,7 @@ const FooterWrapper = styled.div`
   height: 264;
   background-color: var(--color-background);
 
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
 
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ const FooterWrapper = styled.div`
   justify-content: center;
 
   p {
-    padding: 1rem 0 3rem;
+    padding: 2rem 0 1rem;
     font-size: var(--fontSize-small);
     color: var(--color-white);
 
