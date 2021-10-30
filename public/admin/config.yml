@@ -4,7 +4,7 @@ backend:
 media_folder: public/images
 site_url: https://undersound.koeln
 display_url: undersound.koeln
-# logo_url: /images/Profilbild.png # Logo used in CMS
+logo_url: /images/logo.svg # Logo used in CMS
 public_folder: /images
 # publish_mode: editorial_workflow
 locale: 'de'
@@ -116,6 +116,21 @@ collections:
           - name: surveyUrl
             label: Umfrage Url
             widget: 'string'
+      - name: 'footerContent'
+        label: 'Footer'
+        file: 'meta/footerContent.yml'
+        description: 'Details zu Footer, Impressum und Datenschutz'
+        fields:
+          - name: impressBody
+            label: Impressum
+            widget: 'markdown'
+          - name: dataSecurityBody
+            label: Datenschutz
+            widget: 'markdown'
+          - name: footerMeta
+            label: Footer Details
+            widget: 'string'
+            description: 'Text neben Jahr und Impressum/Datenschutz'
 
   # - name: 'posts'
   #   label: 'Posts'
