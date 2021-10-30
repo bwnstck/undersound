@@ -9,7 +9,7 @@ function Footer({ onSetImpress }: { onSetImpress: () => void }) {
     <FooterWrapper>
       <Image src={'/images/logo.svg'} alt="Logo" width={318} height={166} />
       <p>
-        Fiona Göbel & Johanna © {new Date().getFullYear()}
+        Fiona Göbel & Johanna Breuckmann © {new Date().getFullYear()}
         <button onClick={onSetImpress}>Impressum</button>
         <button onClick={onSetImpress}>Datenschutz</button>
       </p>
