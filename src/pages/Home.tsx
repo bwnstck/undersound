@@ -50,7 +50,6 @@ const LandingPage = () => {
             priority
           />
         </TitleWrapper>
-        {/* <Dimmer /> */}
         <SlideContainer className="slide-container">
           <Fade
             duration={3000}
@@ -63,8 +62,8 @@ const LandingPage = () => {
                 <Image
                   src={`/images/slides/slide_${slideNr}.png`}
                   alt="slide"
-                  height={740}
-                  width={1440}
+                  height={1480}
+                  width={2880}
                 />
               </div>
             ))}
@@ -113,26 +112,9 @@ export default LandingPage
 const LandingWrapper = styled.div`
   position: relative;
 `
-// const Dimmer = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   z-index: 90;
-//   height: 100%;
-//   width: 100%;
-//   background-color: rgba(53, 21, 21, 0.5);
-// `
 const SlideContainer = styled.div`
   .Fader {
     height: 51vw;
-    div {
-      width: 100vw;
-    }
-    img {
-      width: 100%;
-      background-position: center !important;
-      background-size: cover !important;
-    }
   }
 `
 
