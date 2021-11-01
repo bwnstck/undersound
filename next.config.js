@@ -1,19 +1,21 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withOptimizedImages = require('next-optimized-images')
 
 // next.config.js
-module.exports = withOptimizedImages({
-  exportPathMap: async function (defaultPathMap) {
-    return {
-      defaultPathMap,
-    }
-  },
-  target: 'serverless',
+module.exports = {
+  // exportPathMap: async function (defaultPathMap) {
+  //   return {
+  //     defaultPathMap,
+  //   }
+  // },
   pageExtensions: ['tsx'],
   i18n: {
     locales: ['de'],
     defaultLocale: 'de',
   },
+  // images: {
+  // Fix for using Next image API
+  // disableStaticImages: true,
+  // },
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     config.module.rules.push(
@@ -35,4 +37,4 @@ module.exports = withOptimizedImages({
     )
     return config
   },
-})
+}

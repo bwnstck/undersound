@@ -54,24 +54,18 @@ const LandingPage = () => {
         <SlideContainer className="slide-container">
           <Fade
             duration={3000}
-            transitionDuration={2000}
+            transitionDuration={1000}
             arrows={false}
             cssClass={'Fader'}
           >
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
+            {[2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
               <div className="each-fade" key={slideNr}>
-                <picture>
-                  <source
-                    srcSet={`/images/slides/slide_${slideNr}.png?webp`}
-                    type="image/webp"
-                  />
-                  <img
-                    src={`/images/slides/slide_${slideNr}.png`}
-                    alt={`slide-${slideNr}`}
-                    // height={740}
-                    // width={1440}
-                  />
-                </picture>
+                <Image
+                  src={`/images/slides/slide_${slideNr}.png`}
+                  alt="slide"
+                  height={740}
+                  width={1440}
+                />
               </div>
             ))}
           </Fade>

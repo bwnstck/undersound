@@ -34,9 +34,18 @@
       "$meta/*": ["meta/*"],
       "$assets/*": ["src/assets/*"],
       "$pages/*": ["src/pages/*"]
-    }
+    },
+    "incremental": true
   },
-  "plugins": [["styled-components", { "ssr": true, "displayName": true }]],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true
+      }
+    ]
+  ],
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
