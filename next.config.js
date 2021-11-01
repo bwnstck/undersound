@@ -1,4 +1,8 @@
-module.exports = {
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const withOptimizedImages = require('next-optimized-images')
+
+// next.config.js
+module.exports = withOptimizedImages({
   exportPathMap: async function (defaultPathMap) {
     return {
       defaultPathMap,
@@ -31,4 +35,4 @@ module.exports = {
     )
     return config
   },
-}
+})

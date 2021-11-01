@@ -42,7 +42,13 @@ const LandingPage = () => {
     <>
       <LandingWrapper>
         <TitleWrapper>
-          <Image src={'/images/logo.svg'} alt="Logo" width={363} height={189} />
+          <Image
+            src={'/images/logo.svg'}
+            alt="Logo"
+            width={363}
+            height={189}
+            priority
+          />
         </TitleWrapper>
         {/* <Dimmer /> */}
         <SlideContainer className="slide-container">
@@ -55,7 +61,7 @@ const LandingPage = () => {
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
               <div className="each-fade" key={slideNr}>
                 <Image
-                  src={`/images/slides/slide_${slideNr}.png`}
+                  src={`/images/slides/slide_${slideNr}.png?webp`}
                   alt="slide"
                   height={740}
                   width={1440}
