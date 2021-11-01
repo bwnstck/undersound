@@ -60,12 +60,18 @@ const LandingPage = () => {
           >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((slideNr) => (
               <div className="each-fade" key={slideNr}>
-                <Image
-                  src={`/images/slides/slide_${slideNr}.png?webp`}
-                  alt="slide"
-                  height={740}
-                  width={1440}
-                />
+                <picture style={{ objectFit: 'cover' }}>
+                  <source
+                    srcSet={`/images/slides/slide_${slideNr}.png?webp`}
+                    type="image/webp"
+                  />
+                  <Image
+                    src={`/images/slides/slide_${slideNr}.png`}
+                    alt="slide"
+                    height={740}
+                    width={1440}
+                  />
+                </picture>
               </div>
             ))}
           </Fade>
