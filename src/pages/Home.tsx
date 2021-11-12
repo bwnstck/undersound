@@ -160,7 +160,10 @@ const TitleAndClose = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  h3 {
+    flex: 1;
+    text-align: center;
+  }
   button {
     background-color: transparent;
     border: 0;
