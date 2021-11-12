@@ -19,7 +19,14 @@ function Footer({ onSetImpress }: { onSetImpress: (type: MetaState) => void }) {
         </button>
       </p>
       <Credits>
-        made with ❤️ by <a href="https://weinstock.it">bwnstck</a>
+        made with <span className="luv">❤️</span>by{' '}
+        <a
+          href="https://weinstock.it"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          bwnstck
+        </a>
       </Credits>
     </FooterWrapper>
   )
@@ -61,4 +68,14 @@ const FooterWrapper = styled.div`
 const Credits = styled.span`
   color: var(--color-white);
   font-size: var(--fontSize-small);
+  margin: auto 0.5rem;
+  height: 2rem;
+
+  :hover .luv {
+    font-size: 1rem;
+    line-height: 0;
+  }
+  .luv {
+    margin-right: 0.3rem;
+  }
 `

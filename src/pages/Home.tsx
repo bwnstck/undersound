@@ -85,6 +85,17 @@ const LandingPage = () => {
           Wird geladen…
         </iframe>
       </SurveyWrapper>
+      <SupportWrapper>
+        <p>Mit freundlicher Unterstützung von </p>
+        <div>
+          <Image
+            src={'/images/unserEbertplatz.png'}
+            alt="unser Ebertplatz"
+            width={708}
+            height={459}
+          />
+        </div>
+      </SupportWrapper>
       <Footer onSetImpress={handleShowMeta} />
       <ImpressWrapper visible={showImpress === 'impress'} ref={impressRef}>
         <TitleAndClose>
@@ -133,7 +144,8 @@ const TitleWrapper = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
-  top: calc(25vw - 95px);
+  top: calc(51vw / 2 - 120px);
+  margin: auto;
   left: 0;
   right: 0;
   z-index: 100;
@@ -142,10 +154,7 @@ const TitleWrapper = styled.div`
 
   filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
 
-  img {
-    max-width: 660px !important;
-    width: 62vw;
-  }
+  max-width: 660px;
 `
 const TitleAndClose = styled.div`
   display: flex;
@@ -168,8 +177,8 @@ const Body = styled(ReactMarkdown)`
     padding-bottom: 1rem;
   }
 `
+
 const ContentWrapper = styled.div`
-  /* width: 90%; */
   background-color: var(--color-white);
   text-align: center;
   margin: 0 auto;
@@ -177,4 +186,17 @@ const ContentWrapper = styled.div`
 `
 const SurveyWrapper = styled(ContentWrapper)`
   background-color: var(--color-cta);
+`
+
+const SupportWrapper = styled(ContentWrapper)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    margin-bottom: 1rem;
+  }
+  > div {
+    max-width: 400px;
+  }
 `
