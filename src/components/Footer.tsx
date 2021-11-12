@@ -7,7 +7,11 @@ import { MetaState } from '$pages/Home'
 import styled from 'styled-components'
 
 import FooterContent from '$meta/footerContent.yml'
-function Footer({ onSetImpress }: { onSetImpress: (type: MetaState) => void }) {
+const Footer = ({
+  onSetImpress,
+}: {
+  onSetImpress: (type: MetaState) => void
+}) => {
   return (
     <FooterWrapper>
       <Image src={'/images/logo.svg'} alt="Logo" width={318} height={166} />
@@ -70,12 +74,12 @@ const Credits = styled.span`
   font-size: var(--fontSize-small);
   margin: auto 0.5rem;
   height: 2rem;
-
   :hover .luv {
     font-size: 1rem;
     line-height: 0;
   }
   .luv {
+    transition: all 300ms ease-in-out;
     margin-right: 0.3rem;
   }
 `
