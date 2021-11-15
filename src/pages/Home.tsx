@@ -89,10 +89,18 @@ const LandingPage = () => {
         <p>Mit freundlicher Unterstützung von </p>
         <div>
           <Image
+            src={'/images/stadtKoeln.jpg'}
+            alt="unser Ebertplatz"
+            width={640}
+            height={220}
+          />
+        </div>
+        <div className="ebertplatz">
+          <Image
             src={'/images/unserEbertplatz.png'}
             alt="unser Ebertplatz"
-            width={708}
-            height={459}
+            width={354}
+            height={230}
           />
         </div>
       </SupportWrapper>
@@ -199,7 +207,11 @@ const SupportWrapper = styled(ContentWrapper)`
   p {
     margin-bottom: 1rem;
   }
-  > div {
+  div {
+    margin-top: 2rem;
     max-width: 400px;
+  }
+  .ebertplatz {
+    width: 250px;
   }
 `
